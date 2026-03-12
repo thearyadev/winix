@@ -64,16 +64,15 @@ async def async_setup_entry(hass: HomeAssistant, entry: ConfigEntry) -> bool:
     user_input = entry.data
 
     auth_response_data = user_input.get(WINIX_AUTH_RESPONSE)
+    if auth_response_data is None:
+        raise ConfigEntryAuthFailed(
+            "No authentication data found. Please reconfigure the integration."
+        )
     auth_response = (
         auth_response_data
         if isinstance(auth_response_data, auth.WinixAuthResponse)
         else auth.WinixAuthResponse(**auth_response_data)
     )
-
-    if not auth_response:
-        raise ConfigEntryAuthFailed(
-            "No authentication data found. Please reconfigure the integration."
-        )
 
     # Grab the client once and pass it around
     client = aiohttp_client.async_get_clientsession(hass)

@@ -21,7 +21,7 @@ class WinixAccount:
 
     def check_access_token(self):
         """Register the Cognito Token with the Winix backen (again)"""
-        from winix import auth
+        from . import auth
 
         payload = {
             "cognitoClientSecretKey": auth.COGNITO_CLIENT_SECRET_KEY,
@@ -45,7 +45,7 @@ class WinixAccount:
             )
 
     def get_device_info_list(self):
-        from winix import auth
+        from . import auth
 
         resp = requests.post(
             "https://us.mobile.winix-iot.com/getDeviceInfoList",
@@ -83,7 +83,7 @@ class WinixAccount:
         # Call after getting a cognito token but before check_access_token
         # necessary for the winix backend to recognize the Android "uuid" we send
         # in most API requests
-        from winix import auth
+        from . import auth
 
         resp = requests.post(
             "https://us.mobile.winix-iot.com/registerUser",

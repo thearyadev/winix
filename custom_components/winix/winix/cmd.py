@@ -7,8 +7,8 @@ from getpass import getpass
 from os import path, makedirs
 from typing import Optional, List
 
-from winix import WinixAccount, WinixDevice, WinixDeviceStub
-from winix.auth import WinixAuthResponse, login, refresh
+from . import WinixAccount, WinixDevice, WinixDeviceStub
+from .auth import WinixAuthResponse, login, refresh
 
 DEFAULT_CONFIG_PATH = "~/.config/winix/config.json"
 
