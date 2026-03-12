@@ -6,7 +6,7 @@ from collections.abc import Mapping
 from typing import Any
 
 import voluptuous as vol
-from winix import auth
+from .winix import auth
 
 from homeassistant import config_entries
 from homeassistant.const import CONF_PASSWORD, CONF_USERNAME

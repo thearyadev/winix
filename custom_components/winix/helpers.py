@@ -7,7 +7,7 @@ from datetime import datetime, timedelta
 from http import HTTPStatus
 
 import aiohttp
-from winix import WinixAccount, auth
+from .winix import WinixAccount, auth
 
 from homeassistant.core import HomeAssistant
 
