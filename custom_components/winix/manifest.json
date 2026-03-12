@@ -3,7 +3,11 @@
   "name": "Winix Air Purifier",
   "documentation": "https://github.com/iprak/winix",
   "requirements": [
-    "winix==0.3.0"
+    "warrant",
+    "warrant_lite",
+    "requests",
+    "python-jose",
+    "boto3"
   ],
   "dependencies": [],
   "codeowners": [

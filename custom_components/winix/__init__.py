@@ -6,7 +6,9 @@ from collections.abc import Iterable
 from typing import Final
 
 from awesomeversion import AwesomeVersion
-from winix import auth
+
+from .winix import auth
+from .winix import WinixAccount, WinixDevice, WinixDeviceStub
 
 from homeassistant.components import persistent_notification
 from homeassistant.config_entries import ConfigEntry
